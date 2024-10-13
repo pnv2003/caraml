@@ -1,2 +1,3 @@
-# mlfs
-Machine Learning From Scratch
+# CaraML
+
+![ML meme](./meme.jpeg)
