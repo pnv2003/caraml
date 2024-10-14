@@ -1,11 +1,12 @@
 import math
+import numpy as np
 
 def entropy(y):
 
     return -sum(
         p * math.log(p, 2)
         for p in (
-            y.count(c) / len(y)
+            np.count_nonzero(y == c) / len(y)
             for c in set(y)
         )
     )
@@ -19,7 +20,7 @@ def gain_ratio(ys):
         )
     
     def gain(ys):
-        return entropy(ys) - info(ys)
+        return entropy(np.concatenate(ys)) - info(ys)
     
     def split_info(ys):
         return -sum(
@@ -33,7 +34,7 @@ def gini_index(ys):
 
     def gini(y):
         return 1 - sum(
-            (y.count(c) / len(y)) ** 2
+            (np.count_nonzero(y == c) / len(y)) ** 2
             for c in set(y)
         )
     
