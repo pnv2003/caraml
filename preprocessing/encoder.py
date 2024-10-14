@@ -73,11 +73,13 @@ class OneHotEncoder:
                 self.invmaps[i][tuple(v)]
                 for v in l
             ]))
-            
+
         return np.column_stack(res)
     
-    def get_encoded_labels(self, label):
-        return [
-            label + "_" + self.invmap[tuple(v)]
-            for v in self.map.values()
-        ]
+    def get_encoded_labels(self, labels):
+
+        res = []
+        for i, label in enumerate(labels):
+            for k, v in self.invmaps[i].items():
+                res.append(f"{label}_{v}")            
+        return res
