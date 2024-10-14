@@ -30,17 +30,22 @@ class DecisionTreeClassifier(Model):
     
     def predict(self, X):
         
-        node = self.tree
-        if node is None:
-            raise "not fitted"
+        values = []
         
-        while not node.leaf:
-            if X[node.feat_index] < node.threshold:
-                node = node.left
-            else:
-                node = node.right
+        for x in X:
+            node = self.tree
+            if node is None:
+                raise "not fitted"
+            
+            while not node.leaf:
+                if x[node.feat_index] < node.threshold:
+                    node = node.left
+                else:
+                    node = node.right
 
-        return node.value
+            values.append(node.value)
+
+        return np.array(values)
     
     def _grow_tree(self, X, y, depth=0):
 
@@ -58,7 +63,7 @@ class DecisionTreeClassifier(Model):
             node = Node()
             node.leaf = True
             # majority vote
-            node.value = max(set(y), key=y.count)
+            node.value = max(set(y), key=lambda c: len(y[y == c]))
             return node
         
         # find best split
