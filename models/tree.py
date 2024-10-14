@@ -1,5 +1,7 @@
 import math
 from typing import Literal
+
+import numpy as np
 from models.base import Model
 from metrics.regression import rss
 from utils.criterion import gain_ratio, gini_index
@@ -172,8 +174,8 @@ class DecisionTreeRegressor(Model):
         if self.max_depth == depth or len(y) < self.min_split:
             node = Node()
             node.leaf = True
-            # majority vote
-            node.value = max(set(y), key=y.count)
+            # mean value
+            node.value = np.mean(y)
             return node
         
         # find best split
