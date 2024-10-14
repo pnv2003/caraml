@@ -44,7 +44,7 @@ class DecisionTreeClassifier(Model):
     
     def _grow_tree(self, X, y, depth=0):
 
-        # encounter leaf
+        # same class
         if len(set(y)) == 1:
             node = Node()
             node.leaf = True
@@ -53,7 +53,6 @@ class DecisionTreeClassifier(Model):
         
         # stop if:
         # - max depth is reached
-        # - no more features to split
         # - min split is reached
         if self.max_depth == depth or len(y) < self.min_split:
             node = Node()
@@ -160,7 +159,7 @@ class DecisionTreeRegressor(Model):
     
     def _grow_tree(self, X, y, depth=0):
 
-        # encounter leaf
+        # same class
         if len(set(y)) == 1:
             node = Node()
             node.leaf = True
@@ -169,7 +168,6 @@ class DecisionTreeRegressor(Model):
         
         # stop if:
         # - max depth is reached
-        # - no more features to split
         # - min split is reached
         if self.max_depth == depth or len(y) < self.min_split:
             node = Node()
