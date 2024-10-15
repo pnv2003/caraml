@@ -4,7 +4,7 @@ import numpy as np
 def entropy(y):
 
     return -sum(
-        p * math.log(p, 2)
+        p * math.log2(p)
         for p in (
             np.count_nonzero(y == c) / len(y)
             for c in set(y)
@@ -24,7 +24,7 @@ def gain_ratio(ys):
     
     def split_info(ys):
         return -sum(
-            len(y) / len(ys) * math.log(len(y) / len(ys), 2)
+            len(y) / len(ys) * math.log2(len(y) / len(ys))
             for y in ys
         )
     
