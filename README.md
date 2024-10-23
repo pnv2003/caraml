@@ -1,3 +1,3 @@
-# CaraML
+# caraml
 
 ![ML meme](./meme.jpeg)
