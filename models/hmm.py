@@ -16,7 +16,7 @@ class HiddenMarkovModel:
         
         self.transition_matrix = transitions
         self.emission_matrix = emissions
-        self.initial_probabilities = initials
+        self.initial_probabilities = initials if initials else np.ones(self.num_states) / self.num_states
 
     def likelihood(self, observations):
         return self._forward(observations)
