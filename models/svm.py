@@ -1,6 +1,6 @@
 import cvxopt
 import numpy as np
-from models.base import Model
+from models import Model
 
 # TODO: soft margin SVM
 # TODO: multiclass SVM

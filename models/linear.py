@@ -1,4 +1,4 @@
-from models.base import Model
+from models import Model
 
 class LinearRegression(Model):
     pass

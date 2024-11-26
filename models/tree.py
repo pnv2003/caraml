@@ -2,7 +2,7 @@ import math
 from typing import Literal
 
 import numpy as np
-from models.base import Model
+from models import Model
 from metrics.regression import rss
 from utils.criterion import gain_ratio, gini_index
 

@@ -1,6 +1,6 @@
 from collections import defaultdict
 import numpy as np
-from models.base import Model
+from models import Model
 from utils.common import is_numeric
 
 class NaiveBayes(Model):
