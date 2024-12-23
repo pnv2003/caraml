@@ -1,5 +1,5 @@
 import numpy as np
-from models.svm import SupportVectorMachine
+from model.svm import SupportVectorMachine
 
 def test():
     classA = np.array([

@@ -1,4 +1,4 @@
-from models.evolve import GeneticAlgorithm
+from model.evolve import GeneticAlgorithm
 
 def test():
     str = "Hello World"

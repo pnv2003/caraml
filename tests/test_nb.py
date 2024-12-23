@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from models.bayes import NaiveBayes
+from model.bayes import NaiveBayes
 
 def test():
     data = pd.read_csv('data/sport.csv')

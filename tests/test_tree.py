@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from models.tree import DecisionTreeClassifier
-from preprocessing.encoder import OneHotEncoder
+from model.tree import DecisionTreeClassifier
+from preprocess.encoder import OneHotEncoder
 
 def test():
     data = pd.read_csv('data/golf.csv', dtype={'Windy': 'str'})

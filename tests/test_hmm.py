@@ -1,5 +1,5 @@
 import numpy as np
-from models.hmm import HiddenMarkovModel
+from model.hmm import HiddenMarkovModel
 
 def test():
     model = HiddenMarkovModel(
