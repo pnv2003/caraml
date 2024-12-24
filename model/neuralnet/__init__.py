@@ -34,6 +34,11 @@ class NeuralNetwork(Model):
 
         preds = self.forward(X)
         loss = self.loss_function.forward(preds, y)
+        loss += sum([
+            layer.regularizer(W) if layer.regularizer else 0
+            for layer in self.layers  
+            for W in layer.weights
+        ])
         grad = self.loss_function.backward(preds, y)
 
         self.backward(grad)
