@@ -4,6 +4,8 @@
 
 - [ ] Linear Regression
 - [x] Decision Tree
+  - [x] Classification Tree
+  - [x] Regression Tree
   - [ ] Random Forest
 - [x] Naive Bayes
 - [x] Genetic Algorithm
@@ -20,7 +22,7 @@
   - [x] LDA
   - [x] PCA
   - [ ] t-SNE
-- [ ] Neural Network
+- [x] Neural Network
   - [x] Layers
   - [x] Activations
   - [x] Loss
